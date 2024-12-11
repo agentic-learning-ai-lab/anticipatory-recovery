@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <!-- <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="LifelongMemory: Leveraging LLMs for Answering Queries in Egocentric Videos"/>
+  <meta property="og:description" content="An LLM-based framework that provides finegraned temporal windows for natural language queries on egocentric videos"/>
+  <meta property="og:url" content="https://agenticlearning.ai/lifelong-memory/"/> -->
+
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- <meta property="og:image" content="static/image/pipeline.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/> -->
+
+
+  <!-- <meta name="twitter:title" content="LifelongMemory: Leveraging LLMs for Answering Queries in Egocentric Videos">
+  <meta name="twitter:description" content="An LLM-based framework that provides finegraned temporal windows for natural language queries on egocentric videos"> -->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="static/images/pipeline.png">
+  <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <!-- <meta name="keywords" content="LifelongMemory,LLM,NLQ">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+
+  <title>Reawakening knowledge</title>
+  <link rel="icon" type="image/x-icon" href="static/images/NYU-Symbol.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Reawakening knowledge: <br>Anticipatory recovery from catastrophic interference via structured training</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://yanlai00.github.io/" target="_blank">Yanlai Yang<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.colorado.edu/cognitive-psychology/matt-jones/" target="_blank">Matt Jones<sup>2</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://home.cs.colorado.edu/~mozer/index.php/" target="_blank">Michael C. Mozer<sup>3,2</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://mengyeren.com/" target="_blank">Mengye Ren<sup>1</sup></a>
+              </span>
+              </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>New York University, <sup>2</sup>University of Colorado, Boulder, <sup>3</sup>Google DeepMind</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2403.09613" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                    </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/agentic-learning-ai-lab/anticipatory-recovery" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://neurips.cc/virtual/2024/poster/94697" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>NeurIPS 2024 Poster</span>
+                  </a>
+                  </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We explore the training dynamics of neural networks in a structured non-IID setting
+            where documents are presented cyclically in a fixed, repeated sequence. Typically,
+            networks suffer from catastrophic interference when training on a sequence of
+            documents; however, we discover a curious and remarkable property of LLMs
+            finetuned sequentially in this setting: they exhibit anticipatory behavior, recovering from the forgetting on documents before encountering them again. This
+            behavior occurs even though the documents are never presented in context together.
+            The behavior emerges and becomes more robust as the architecture scales up its
+            number of parameters. Through comprehensive experiments and visualizations,
+            we demonstrate a new mechanism by which over-parametrized neural networks
+            can recover from catastrophic interference and uncover new insights into training
+            over-parameterized networks in cyclically structured environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">The Anticipatory Recovery Phenomenon</h2>
+      <h2> We uncover a very intriguing behavior when fine-tuning an LLM on <em>N</em> documents for <em>E</em> epochs with cyclic training, taking multiple gradient steps on each document each pass: starting from epoch 2, the loss on the first task stops increasing halfway through the cycle and starts to recover. In later epochs, more than 90% of the initial forgetting have been recovered before we cycle back to the first task. We call this surprising effect <strong>“anticipatory recovery.”</strong></h2>
+      <div class="hero-body">
+        <center><img src="static/images/01a_loss1.png" width="600" alt="MY ALT TEXT" />
+        <center>Cross Entropy Loss curves on the first document for cyclic and random shuffled fine-tuning. <br> The black circles indicate points just prior to training on the focal document.
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+<!--Pipeline -->
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Motivation</h2>
+    <h2> Most works in continual learning have focused on several very limited and artificial settings, such as task or class incremental learning. In these paradigms, the tasks are often completely disjoint with each other, and the old tasks do not appear again. This is very different from naturalistic data sequences that occurs in the real world, which have repetition and temporal structure. </h2>
+    <br>
+    <h2> In this paper, we study the simplest special case of sequential learning with temporal structure, cyclic training. In cyclic training, the tasks are iterated in the exact same order across different epochs. In our experiments, each task is training a large language model on a different document. In particular, we take a few gradient steps on each document before moving to the next one. </h2>
+    <div class="hero-body">
+      <center><img src="static/images/cyclic_training.png" width="800" alt="MY ALT TEXT" />
+    </div>
+  </div>
+</section>
+<!-- Pipeline -->
+
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Understanding Anticipatory Recovery</h2>
+    <h2> We did a comprehensive analysis on how different training factors affect anticipatory recovery. We found that Anticipatory recovery occurs only when the network has sufficient width and depth such that it is well fitted to each document. </h2>
+    <br>
+    <h2>Namely, longer task sequences and more gradient steps on each task can facilitate the amount of recovery.</h2>
+    <div class="hero-body">
+      <center><img src="static/images/modelsize.png" width="600" alt="MY ALT TEXT" />
+      <center> Effect of model size for pre-trained models on anticipatory recovery. “Recovery Score” refer to the average proportion of the initial forgetting during the last epoch that the model recovers before returning to the same document.
+    </div>
+    <div class="hero-body">
+      <center><img src="static/images/modelsizescratch.png" width="600" alt="MY ALT TEXT" />
+      <center> Effect of model size for models trained from scratch on anticipatory recovery.
+    </div>
+    <div class="hero-body">
+      <center><img src="static/images/numtasks.png" width="600" alt="MY ALT TEXT" />
+      <center> Effect of number of documents (sequence length) for models trained from scratch on anticipatory recovery.
+    </div>
+    <div class="hero-body">
+      <center><img src="static/images/numgradstep.png" width="600" alt="MY ALT TEXT" />
+      <center> Effect of number of gradient steps for models trained from scratch on anticipatory recovery.
+    </div>
+  </div>
+</section>
+
+<!-- BibTex citation -->
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{wang2024lifelongmemory,
+      title={LifelongMemory: Leveraging LLMs for Answering Queries in Long-form Egocentric Videos}, 
+      author={Ying Wang and Yanlai Yang and Mengye Ren},
+      year={2024},
+      eprint={2312.05269},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+</code></pre>
+    </div>
+</section> -->
+
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
