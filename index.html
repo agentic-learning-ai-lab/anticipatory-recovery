@@ -149,7 +149,7 @@
       <h2 class="title is-3">The Anticipatory Recovery Phenomenon</h2>
       <h2> We uncover a very intriguing behavior when fine-tuning an LLM on <em>N</em> documents for <em>E</em> epochs with cyclic training, taking multiple gradient steps on each document each pass: starting from epoch 2, the loss on the first task stops increasing halfway through the cycle and starts to recover. In later epochs, more than 90% of the initial forgetting have been recovered before we cycle back to the first task. We call this surprising effect <strong>“anticipatory recovery.”</strong></h2>
       <div class="hero-body">
-        <center><img src="static/images/01a_loss1.png" width="600" alt="MY ALT TEXT" />
+        <center><img src="static/images/01a_loss1.png" width="400" alt="MY ALT TEXT" />
         <center>Cross Entropy Loss curves on the first document for cyclic and random shuffled fine-tuning. <br> The black circles indicate points just prior to training on the focal document.
       </div>
     </div>
@@ -178,21 +178,60 @@
     <br>
     <h2>Namely, longer task sequences and more gradient steps on each task can facilitate the amount of recovery.</h2>
     <div class="hero-body">
-      <center><img src="static/images/modelsize.png" width="600" alt="MY ALT TEXT" />
+      <center><img src="static/images/modelsize.png" width="500" alt="MY ALT TEXT" />
       <center> Effect of model size for pre-trained models on anticipatory recovery. “Recovery Score” refer to the average proportion of the initial forgetting during the last epoch that the model recovers before returning to the same document.
     </div>
     <div class="hero-body">
-      <center><img src="static/images/modelsizescratch.png" width="600" alt="MY ALT TEXT" />
+      <center><img src="static/images/modelsizescratch.png" width="500" alt="MY ALT TEXT" />
       <center> Effect of model size for models trained from scratch on anticipatory recovery.
     </div>
     <div class="hero-body">
-      <center><img src="static/images/numtasks.png" width="600" alt="MY ALT TEXT" />
+      <center><img src="static/images/numtasks.png" width="500" alt="MY ALT TEXT" />
       <center> Effect of number of documents (sequence length) for models trained from scratch on anticipatory recovery.
     </div>
     <div class="hero-body">
-      <center><img src="static/images/numgradstep.png" width="600" alt="MY ALT TEXT" />
+      <center><img src="static/images/numgradstep.png" width="500" alt="MY ALT TEXT" />
       <center> Effect of number of gradient steps for models trained from scratch on anticipatory recovery.
     </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Visualizations</h2>
+    <h2> We made some initial progress towards understanding the underlying mechanisms that causes the anticipatory recovery phenomenon. We visualized how the model weights and activations change throughout cyclic training, and find that the trajectory forms a conic spiral in a low-dimensional manifold, and that the solutions to adjacent tasks become closer. </h2>
+    <div class="hero-body">
+      <center><img src="static/images/spiral.png" width="400" alt="MY ALT TEXT" />
+      <center>Top 3 PCA components of last layer weights in the first 3 epochs
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Prequential Evaluation</h2>
+    <h2> Prequential evaluation refers to measuring the online loss, or the loss on the upcoming task, which matters the most for real-world agents.</h2>
+    <br>
+    <h2> As a result of anticipatory recovery, we show that training with fixed ordering achieves superior performance than random shuffling in the prequential evaluation setting. This result hints at the practical benefits of structured training. </h2>
+    <div class="hero-body">
+      <center><img src="static/images/prequential.png" width="400" alt="MY ALT TEXT" />
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Toy Computation Model</h2>
+    <h2> We devise a computation toy model that demonstrates a similar anticipatory recovery phenomenon in its loss curve, with a single learnable linear embedding layer and a learnable target vector with task-specific mappings. Please refer to the paper for more details. </h2>
+    <br>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Conclusion</h2>
+    <h2> We demonstrated the anticipatory recovery phenomenon—networks recover from the initial forgetting before seeing the same document again. This phenomenon is a sharp contrast with the well-known phenomenon of catastrophic interference, where forgetting increases monotonically as a network is trained on a sequence of different documents. Our research indicates that there is value in exploring naturalistic task sequences within continual learning. </h2>
+    <br>
   </div>
 </section>
 
