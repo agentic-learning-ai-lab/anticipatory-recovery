@@ -1,6 +1,6 @@
 #  Anticipatory Recovery in Sequential Cyclic Fine-tuning
 
-Code for the paper "Reawakening knowledge: Anticipatory recovery from catastrophic interference via structured training" (ArXiv 2024).
+Code for the paper "Reawakening knowledge: Anticipatory recovery from catastrophic interference via structured training" ([NeurIPS 2024](https://openreview.net/pdf?id=YSs1z5udBY)).
 
 The `llm-experiments` folder includes the Language model ([Pythia](https://github.com/EleutherAI/pythia)) experiments; the `igpt-experiments` folder includes the [Image GPT](https://github.com/openai/image-gpt) experiments; the `imagenet-experiments` folder includes the image classification experiments.
 
